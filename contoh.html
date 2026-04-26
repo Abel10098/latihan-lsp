@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Inventory Manager - Lab Sekolah</title>
+    <link rel="stylesheet" href="contoh.css">
+    <!-- Asset Gambar: Foto profil diri (ganti dengan foto Anda) -->
+    <link rel="icon" href="https://picsum.photos/32/32?random=1">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <img src="https://picsum.photos/50/50?random=1" alt="Foto Profil" class="profile-img">
+                <h1>Mini Inventory Manager</h1>
+                <p>Laboratorium Komputer Sekolah</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="PC">PC</button>
+                <button class="filter-btn" data-category="Laptop">Laptop</button>
+                <button class="filter-btn" data-category="Networking">Networking</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toggle Admin Form -->
+    <section class="admin-toggle">
+        <div class="container">
+            <button id="toggleForm" class="admin-btn">✨ Admin Panel</button>
+        </div>
+    </section>
+
+    <!-- Admin Form -->
+    <section id="adminFormSection" class="admin-form hidden">
+        <div class="container">
+            <form id="inventoryForm" class="inventory-form">
+                <h2>Tambah Perangkat Baru</h2>
+                
+                <div class="form-group">
+                    <label for="deviceName">Nama Perangkat:</label>
+                    <input type="text" id="deviceName" required placeholder="Contoh: Lenovo ThinkPad T480">
+                </div>
+
+                <div class="form-group">
+                    <label for="deviceImage">URL Foto (.jpg):</label>
+                    <input type="url" id="deviceImage" required placeholder="https://picsum.photos/300/200">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Kategori:</label>
+                    <select id="category" required>
+                        <option value="">Pilih Kategori</option>
+                        <option value="PC">PC</option>
+                        <option value="Laptop">Laptop</option>
+                        <option value="Networking">Networking</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status:</label>
+                    <select id="status" required>
+                        <option value="">Pilih Status</option>
+                        <option value="Baik">Baik</option>
+                        <option value="Rusak">Rusak</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Tambah Perangkat</button>
+                    <button type="button" id="cancelForm" class="cancel-btn">Batal</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Daftar Inventaris Perangkat</h2>
+            <div id="gallery" class="gallery">
+                <!-- Cards akan di-generate oleh JavaScript -->
+            </div>
+            <div id="noData" class="no-data hidden">
+                <p>📭 Belum ada data perangkat. Tambahkan melalui Admin Panel!</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="contoh.js"></script>
+</body>
+</html>
